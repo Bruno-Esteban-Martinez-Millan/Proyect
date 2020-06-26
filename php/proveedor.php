@@ -1,5 +1,5 @@
 <?php
-require_once("conexion.php")
+require_once("conexion.php");
 class Proveedor extends Conexion{
 
 	public function alta($nombre,$telefono,$direccion,$correo,$rfc){
@@ -9,6 +9,10 @@ class Proveedor extends Conexion{
 	public function consulta(){
 		$this->sentencia = "SELECT * FROM proveedor";
 		return $this->obtenerSentencia();
+	}
+	public function eliminar($id){
+		$this->sentencia = "DELETE FROM proveedor WHERE IDproveedor = $id";
+		$this->ejecutarSentencia();
 	}
 }
 

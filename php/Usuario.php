@@ -14,8 +14,12 @@ class Usuario extends Conexion{
 	}
 
 	public function consulta(){
-		$this->sentencia="SELECT *FROM usuario";
+		$this->sentencia="SELECT * FROM usuario";
 		return $this->obtenerSentencia();
+	}
+	public function eliminar($id){
+		$this->sentencia = "DELETE FROM usuario WHERE IDusuario = $id";
+		$this->ejecutarSentencia();
 	}
 }
 

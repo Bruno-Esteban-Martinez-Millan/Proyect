@@ -18,8 +18,9 @@ class Cliente extends Conexion{
 		return $this->obtenerSentencia();
 	}
 
-	public function elimnar($id){
-       $this->sentencia = "DELETE FROM cliente WHERE IDcliente = $id"
+	public function eliminar($id){
+       $this->sentencia = "DELETE FROM cliente WHERE IDcliente = $id";
+       $this->ejecutarSentencia();
 	}
 }
 

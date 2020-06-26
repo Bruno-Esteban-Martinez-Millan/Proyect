@@ -1,5 +1,5 @@
 <?php
-require_once("conexion.php")
+require_once("conexion.php");
 class Proyecto extends Conexion{
 
 	public function alta($nombre_pro,$tipo_pro,$idempleado,$fecha_in,$fecha_fin,$descripcion){
@@ -9,6 +9,10 @@ class Proyecto extends Conexion{
 	public function consulta(){
 		$this->sentencia = "SELECT * FROM proyecto";
 		return $this->obtenerSentencia();
+	}
+	public function eliminar($id){
+		$this->sentencia = "DELETE FROM proyecto WHERE IDproyecto = $id";
+		$this->ejecutarSentencia();
 	}
 }
 

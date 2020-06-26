@@ -17,6 +17,11 @@ class Empleado extends Conexion{
 		$this->sentencia="SELECT *FROM empleado";
 		return $this->obtenerSentencia();
 	}
+
+	public function eliminar($id){
+		$this->sentencia = "DELETE FROM empleado WHERE IDempleado = $id";
+			$this->ejecutarSentencia();
+	}
 }
 
 ?>

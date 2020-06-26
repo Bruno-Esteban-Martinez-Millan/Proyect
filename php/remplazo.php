@@ -1,5 +1,5 @@
 <?php
-require_once("conexion.php")
+require_once("conexion.php");
 class Remplazo extends Conexion{
 
 	public function alta($idmobiliario,$fecha,$costo,$descripcion){
@@ -9,6 +9,10 @@ class Remplazo extends Conexion{
 	public function consulta(){
 		$this->sentencia = "SELECT * FROM remplazo";
 		return $this->obtenerSentencia();
+	}
+	public function eliminar($id){
+		$this->sentencia = "DELETE FROM remplazo WHERE IDremplazo = $id";
+		$this->ejecutarSentencia();
 	}
 }
 

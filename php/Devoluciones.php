@@ -17,6 +17,11 @@ class Devoluciones extends Conexion{
 		$this->sentencia="SELECT *FROM devoluciones";
 		return $this->obtenerSentencia();
 	}
+
+	public function eliminar($id){
+		$this->sentencia = "DELETE FROM devoluciones WHERE IDdevoluciones = $id";
+				$this->ejecutarSentencia();
+	}
 }
 
 ?>
